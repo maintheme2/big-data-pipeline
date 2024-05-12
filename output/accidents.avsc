@@ -33,16 +33,28 @@
     "columnName" : "end_time",
     "sqlType" : "12"
   }, {
-    "name" : "lat",
+    "name" : "start_lat",
     "type" : [ "null", "double" ],
     "default" : null,
-    "columnName" : "lat",
+    "columnName" : "start_lat",
     "sqlType" : "8"
   }, {
-    "name" : "lng",
+    "name" : "start_lng",
     "type" : [ "null", "double" ],
     "default" : null,
-    "columnName" : "lng",
+    "columnName" : "start_lng",
+    "sqlType" : "8"
+  }, {
+    "name" : "end_lat",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "end_lat",
+    "sqlType" : "8"
+  }, {
+    "name" : "end_lng",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "end_lng",
     "sqlType" : "8"
   }, {
     "name" : "distance",
@@ -117,6 +129,12 @@
     "columnName" : "temperature",
     "sqlType" : "8"
   }, {
+    "name" : "wind_chill",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "wind_chill",
+    "sqlType" : "8"
+  }, {
     "name" : "humidity",
     "type" : [ "null", "double" ],
     "default" : null,
@@ -145,6 +163,12 @@
     "type" : [ "null", "double" ],
     "default" : null,
     "columnName" : "wind_speed",
+    "sqlType" : "8"
+  }, {
+    "name" : "precipitation",
+    "type" : [ "null", "double" ],
+    "default" : null,
+    "columnName" : "precipitation",
     "sqlType" : "8"
   }, {
     "name" : "weather_condition",

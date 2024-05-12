@@ -2,7 +2,7 @@
 // WARNING: This class is AUTO-GENERATED. Modify at your own risk.
 //
 // Debug information:
-// Generated date: Sat Apr 20 16:50:59 MSK 2024
+// Generated date: Sat May 11 15:01:17 MSK 2024
 // For connector: org.apache.sqoop.manager.PostgresqlManager
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;
@@ -70,16 +70,28 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
         accidents.this.end_time = (String)value;
       }
     });
-    setters.put("lat", new FieldSetterCommand() {
+    setters.put("start_lat", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        accidents.this.lat = (Double)value;
+        accidents.this.start_lat = (Double)value;
       }
     });
-    setters.put("lng", new FieldSetterCommand() {
+    setters.put("start_lng", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
-        accidents.this.lng = (Double)value;
+        accidents.this.start_lng = (Double)value;
+      }
+    });
+    setters.put("end_lat", new FieldSetterCommand() {
+      @Override
+      public void setField(Object value) {
+        accidents.this.end_lat = (Double)value;
+      }
+    });
+    setters.put("end_lng", new FieldSetterCommand() {
+      @Override
+      public void setField(Object value) {
+        accidents.this.end_lng = (Double)value;
       }
     });
     setters.put("distance", new FieldSetterCommand() {
@@ -154,6 +166,12 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
         accidents.this.temperature = (Double)value;
       }
     });
+    setters.put("wind_chill", new FieldSetterCommand() {
+      @Override
+      public void setField(Object value) {
+        accidents.this.wind_chill = (Double)value;
+      }
+    });
     setters.put("humidity", new FieldSetterCommand() {
       @Override
       public void setField(Object value) {
@@ -182,6 +200,12 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
       @Override
       public void setField(Object value) {
         accidents.this.wind_speed = (Double)value;
+      }
+    });
+    setters.put("precipitation", new FieldSetterCommand() {
+      @Override
+      public void setField(Object value) {
+        accidents.this.precipitation = (Double)value;
       }
     });
     setters.put("weather_condition", new FieldSetterCommand() {
@@ -351,26 +375,48 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     this.end_time = end_time;
     return this;
   }
-  private Double lat;
-  public Double get_lat() {
-    return lat;
+  private Double start_lat;
+  public Double get_start_lat() {
+    return start_lat;
   }
-  public void set_lat(Double lat) {
-    this.lat = lat;
+  public void set_start_lat(Double start_lat) {
+    this.start_lat = start_lat;
   }
-  public accidents with_lat(Double lat) {
-    this.lat = lat;
+  public accidents with_start_lat(Double start_lat) {
+    this.start_lat = start_lat;
     return this;
   }
-  private Double lng;
-  public Double get_lng() {
-    return lng;
+  private Double start_lng;
+  public Double get_start_lng() {
+    return start_lng;
   }
-  public void set_lng(Double lng) {
-    this.lng = lng;
+  public void set_start_lng(Double start_lng) {
+    this.start_lng = start_lng;
   }
-  public accidents with_lng(Double lng) {
-    this.lng = lng;
+  public accidents with_start_lng(Double start_lng) {
+    this.start_lng = start_lng;
+    return this;
+  }
+  private Double end_lat;
+  public Double get_end_lat() {
+    return end_lat;
+  }
+  public void set_end_lat(Double end_lat) {
+    this.end_lat = end_lat;
+  }
+  public accidents with_end_lat(Double end_lat) {
+    this.end_lat = end_lat;
+    return this;
+  }
+  private Double end_lng;
+  public Double get_end_lng() {
+    return end_lng;
+  }
+  public void set_end_lng(Double end_lng) {
+    this.end_lng = end_lng;
+  }
+  public accidents with_end_lng(Double end_lng) {
+    this.end_lng = end_lng;
     return this;
   }
   private Double distance;
@@ -505,6 +551,17 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     this.temperature = temperature;
     return this;
   }
+  private Double wind_chill;
+  public Double get_wind_chill() {
+    return wind_chill;
+  }
+  public void set_wind_chill(Double wind_chill) {
+    this.wind_chill = wind_chill;
+  }
+  public accidents with_wind_chill(Double wind_chill) {
+    this.wind_chill = wind_chill;
+    return this;
+  }
   private Double humidity;
   public Double get_humidity() {
     return humidity;
@@ -558,6 +615,17 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
   }
   public accidents with_wind_speed(Double wind_speed) {
     this.wind_speed = wind_speed;
+    return this;
+  }
+  private Double precipitation;
+  public Double get_precipitation() {
+    return precipitation;
+  }
+  public void set_precipitation(Double precipitation) {
+    this.precipitation = precipitation;
+  }
+  public accidents with_precipitation(Double precipitation) {
+    this.precipitation = precipitation;
     return this;
   }
   private String weather_condition;
@@ -772,8 +840,10 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     equal = equal && (this.severity == null ? that.severity == null : this.severity.equals(that.severity));
     equal = equal && (this.start_time == null ? that.start_time == null : this.start_time.equals(that.start_time));
     equal = equal && (this.end_time == null ? that.end_time == null : this.end_time.equals(that.end_time));
-    equal = equal && (this.lat == null ? that.lat == null : this.lat.equals(that.lat));
-    equal = equal && (this.lng == null ? that.lng == null : this.lng.equals(that.lng));
+    equal = equal && (this.start_lat == null ? that.start_lat == null : this.start_lat.equals(that.start_lat));
+    equal = equal && (this.start_lng == null ? that.start_lng == null : this.start_lng.equals(that.start_lng));
+    equal = equal && (this.end_lat == null ? that.end_lat == null : this.end_lat.equals(that.end_lat));
+    equal = equal && (this.end_lng == null ? that.end_lng == null : this.end_lng.equals(that.end_lng));
     equal = equal && (this.distance == null ? that.distance == null : this.distance.equals(that.distance));
     equal = equal && (this.description == null ? that.description == null : this.description.equals(that.description));
     equal = equal && (this.street == null ? that.street == null : this.street.equals(that.street));
@@ -786,11 +856,13 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     equal = equal && (this.airport_code == null ? that.airport_code == null : this.airport_code.equals(that.airport_code));
     equal = equal && (this.weather_timestamp == null ? that.weather_timestamp == null : this.weather_timestamp.equals(that.weather_timestamp));
     equal = equal && (this.temperature == null ? that.temperature == null : this.temperature.equals(that.temperature));
+    equal = equal && (this.wind_chill == null ? that.wind_chill == null : this.wind_chill.equals(that.wind_chill));
     equal = equal && (this.humidity == null ? that.humidity == null : this.humidity.equals(that.humidity));
     equal = equal && (this.pressure == null ? that.pressure == null : this.pressure.equals(that.pressure));
     equal = equal && (this.visibility == null ? that.visibility == null : this.visibility.equals(that.visibility));
     equal = equal && (this.wind_direction == null ? that.wind_direction == null : this.wind_direction.equals(that.wind_direction));
     equal = equal && (this.wind_speed == null ? that.wind_speed == null : this.wind_speed.equals(that.wind_speed));
+    equal = equal && (this.precipitation == null ? that.precipitation == null : this.precipitation.equals(that.precipitation));
     equal = equal && (this.weather_condition == null ? that.weather_condition == null : this.weather_condition.equals(that.weather_condition));
     equal = equal && (this.amenity == null ? that.amenity == null : this.amenity.equals(that.amenity));
     equal = equal && (this.bump == null ? that.bump == null : this.bump.equals(that.bump));
@@ -825,8 +897,10 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     equal = equal && (this.severity == null ? that.severity == null : this.severity.equals(that.severity));
     equal = equal && (this.start_time == null ? that.start_time == null : this.start_time.equals(that.start_time));
     equal = equal && (this.end_time == null ? that.end_time == null : this.end_time.equals(that.end_time));
-    equal = equal && (this.lat == null ? that.lat == null : this.lat.equals(that.lat));
-    equal = equal && (this.lng == null ? that.lng == null : this.lng.equals(that.lng));
+    equal = equal && (this.start_lat == null ? that.start_lat == null : this.start_lat.equals(that.start_lat));
+    equal = equal && (this.start_lng == null ? that.start_lng == null : this.start_lng.equals(that.start_lng));
+    equal = equal && (this.end_lat == null ? that.end_lat == null : this.end_lat.equals(that.end_lat));
+    equal = equal && (this.end_lng == null ? that.end_lng == null : this.end_lng.equals(that.end_lng));
     equal = equal && (this.distance == null ? that.distance == null : this.distance.equals(that.distance));
     equal = equal && (this.description == null ? that.description == null : this.description.equals(that.description));
     equal = equal && (this.street == null ? that.street == null : this.street.equals(that.street));
@@ -839,11 +913,13 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     equal = equal && (this.airport_code == null ? that.airport_code == null : this.airport_code.equals(that.airport_code));
     equal = equal && (this.weather_timestamp == null ? that.weather_timestamp == null : this.weather_timestamp.equals(that.weather_timestamp));
     equal = equal && (this.temperature == null ? that.temperature == null : this.temperature.equals(that.temperature));
+    equal = equal && (this.wind_chill == null ? that.wind_chill == null : this.wind_chill.equals(that.wind_chill));
     equal = equal && (this.humidity == null ? that.humidity == null : this.humidity.equals(that.humidity));
     equal = equal && (this.pressure == null ? that.pressure == null : this.pressure.equals(that.pressure));
     equal = equal && (this.visibility == null ? that.visibility == null : this.visibility.equals(that.visibility));
     equal = equal && (this.wind_direction == null ? that.wind_direction == null : this.wind_direction.equals(that.wind_direction));
     equal = equal && (this.wind_speed == null ? that.wind_speed == null : this.wind_speed.equals(that.wind_speed));
+    equal = equal && (this.precipitation == null ? that.precipitation == null : this.precipitation.equals(that.precipitation));
     equal = equal && (this.weather_condition == null ? that.weather_condition == null : this.weather_condition.equals(that.weather_condition));
     equal = equal && (this.amenity == null ? that.amenity == null : this.amenity.equals(that.amenity));
     equal = equal && (this.bump == null ? that.bump == null : this.bump.equals(that.bump));
@@ -871,43 +947,47 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     this.severity = JdbcWritableBridge.readInteger(3, __dbResults);
     this.start_time = JdbcWritableBridge.readString(4, __dbResults);
     this.end_time = JdbcWritableBridge.readString(5, __dbResults);
-    this.lat = JdbcWritableBridge.readDouble(6, __dbResults);
-    this.lng = JdbcWritableBridge.readDouble(7, __dbResults);
-    this.distance = JdbcWritableBridge.readDouble(8, __dbResults);
-    this.description = JdbcWritableBridge.readString(9, __dbResults);
-    this.street = JdbcWritableBridge.readString(10, __dbResults);
-    this.city = JdbcWritableBridge.readString(11, __dbResults);
-    this.county = JdbcWritableBridge.readString(12, __dbResults);
-    this.state = JdbcWritableBridge.readString(13, __dbResults);
-    this.zipcode = JdbcWritableBridge.readString(14, __dbResults);
-    this.country = JdbcWritableBridge.readString(15, __dbResults);
-    this.timezone = JdbcWritableBridge.readString(16, __dbResults);
-    this.airport_code = JdbcWritableBridge.readString(17, __dbResults);
-    this.weather_timestamp = JdbcWritableBridge.readString(18, __dbResults);
-    this.temperature = JdbcWritableBridge.readDouble(19, __dbResults);
-    this.humidity = JdbcWritableBridge.readDouble(20, __dbResults);
-    this.pressure = JdbcWritableBridge.readDouble(21, __dbResults);
-    this.visibility = JdbcWritableBridge.readDouble(22, __dbResults);
-    this.wind_direction = JdbcWritableBridge.readString(23, __dbResults);
-    this.wind_speed = JdbcWritableBridge.readDouble(24, __dbResults);
-    this.weather_condition = JdbcWritableBridge.readString(25, __dbResults);
-    this.amenity = JdbcWritableBridge.readBoolean(26, __dbResults);
-    this.bump = JdbcWritableBridge.readBoolean(27, __dbResults);
-    this.crossing = JdbcWritableBridge.readBoolean(28, __dbResults);
-    this.give_way = JdbcWritableBridge.readBoolean(29, __dbResults);
-    this.junction = JdbcWritableBridge.readBoolean(30, __dbResults);
-    this.no_exit = JdbcWritableBridge.readBoolean(31, __dbResults);
-    this.railway = JdbcWritableBridge.readBoolean(32, __dbResults);
-    this.roundabout = JdbcWritableBridge.readBoolean(33, __dbResults);
-    this.station = JdbcWritableBridge.readBoolean(34, __dbResults);
-    this.stop = JdbcWritableBridge.readBoolean(35, __dbResults);
-    this.traffic_calming = JdbcWritableBridge.readBoolean(36, __dbResults);
-    this.traffic_signal = JdbcWritableBridge.readBoolean(37, __dbResults);
-    this.turning_loop = JdbcWritableBridge.readBoolean(38, __dbResults);
-    this.sunrise_sunset = JdbcWritableBridge.readString(39, __dbResults);
-    this.civil_twilight = JdbcWritableBridge.readString(40, __dbResults);
-    this.nautical_twilight = JdbcWritableBridge.readString(41, __dbResults);
-    this.astronomical_twilight = JdbcWritableBridge.readString(42, __dbResults);
+    this.start_lat = JdbcWritableBridge.readDouble(6, __dbResults);
+    this.start_lng = JdbcWritableBridge.readDouble(7, __dbResults);
+    this.end_lat = JdbcWritableBridge.readDouble(8, __dbResults);
+    this.end_lng = JdbcWritableBridge.readDouble(9, __dbResults);
+    this.distance = JdbcWritableBridge.readDouble(10, __dbResults);
+    this.description = JdbcWritableBridge.readString(11, __dbResults);
+    this.street = JdbcWritableBridge.readString(12, __dbResults);
+    this.city = JdbcWritableBridge.readString(13, __dbResults);
+    this.county = JdbcWritableBridge.readString(14, __dbResults);
+    this.state = JdbcWritableBridge.readString(15, __dbResults);
+    this.zipcode = JdbcWritableBridge.readString(16, __dbResults);
+    this.country = JdbcWritableBridge.readString(17, __dbResults);
+    this.timezone = JdbcWritableBridge.readString(18, __dbResults);
+    this.airport_code = JdbcWritableBridge.readString(19, __dbResults);
+    this.weather_timestamp = JdbcWritableBridge.readString(20, __dbResults);
+    this.temperature = JdbcWritableBridge.readDouble(21, __dbResults);
+    this.wind_chill = JdbcWritableBridge.readDouble(22, __dbResults);
+    this.humidity = JdbcWritableBridge.readDouble(23, __dbResults);
+    this.pressure = JdbcWritableBridge.readDouble(24, __dbResults);
+    this.visibility = JdbcWritableBridge.readDouble(25, __dbResults);
+    this.wind_direction = JdbcWritableBridge.readString(26, __dbResults);
+    this.wind_speed = JdbcWritableBridge.readDouble(27, __dbResults);
+    this.precipitation = JdbcWritableBridge.readDouble(28, __dbResults);
+    this.weather_condition = JdbcWritableBridge.readString(29, __dbResults);
+    this.amenity = JdbcWritableBridge.readBoolean(30, __dbResults);
+    this.bump = JdbcWritableBridge.readBoolean(31, __dbResults);
+    this.crossing = JdbcWritableBridge.readBoolean(32, __dbResults);
+    this.give_way = JdbcWritableBridge.readBoolean(33, __dbResults);
+    this.junction = JdbcWritableBridge.readBoolean(34, __dbResults);
+    this.no_exit = JdbcWritableBridge.readBoolean(35, __dbResults);
+    this.railway = JdbcWritableBridge.readBoolean(36, __dbResults);
+    this.roundabout = JdbcWritableBridge.readBoolean(37, __dbResults);
+    this.station = JdbcWritableBridge.readBoolean(38, __dbResults);
+    this.stop = JdbcWritableBridge.readBoolean(39, __dbResults);
+    this.traffic_calming = JdbcWritableBridge.readBoolean(40, __dbResults);
+    this.traffic_signal = JdbcWritableBridge.readBoolean(41, __dbResults);
+    this.turning_loop = JdbcWritableBridge.readBoolean(42, __dbResults);
+    this.sunrise_sunset = JdbcWritableBridge.readString(43, __dbResults);
+    this.civil_twilight = JdbcWritableBridge.readString(44, __dbResults);
+    this.nautical_twilight = JdbcWritableBridge.readString(45, __dbResults);
+    this.astronomical_twilight = JdbcWritableBridge.readString(46, __dbResults);
   }
   public void readFields0(ResultSet __dbResults) throws SQLException {
     this.id = JdbcWritableBridge.readString(1, __dbResults);
@@ -915,43 +995,47 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     this.severity = JdbcWritableBridge.readInteger(3, __dbResults);
     this.start_time = JdbcWritableBridge.readString(4, __dbResults);
     this.end_time = JdbcWritableBridge.readString(5, __dbResults);
-    this.lat = JdbcWritableBridge.readDouble(6, __dbResults);
-    this.lng = JdbcWritableBridge.readDouble(7, __dbResults);
-    this.distance = JdbcWritableBridge.readDouble(8, __dbResults);
-    this.description = JdbcWritableBridge.readString(9, __dbResults);
-    this.street = JdbcWritableBridge.readString(10, __dbResults);
-    this.city = JdbcWritableBridge.readString(11, __dbResults);
-    this.county = JdbcWritableBridge.readString(12, __dbResults);
-    this.state = JdbcWritableBridge.readString(13, __dbResults);
-    this.zipcode = JdbcWritableBridge.readString(14, __dbResults);
-    this.country = JdbcWritableBridge.readString(15, __dbResults);
-    this.timezone = JdbcWritableBridge.readString(16, __dbResults);
-    this.airport_code = JdbcWritableBridge.readString(17, __dbResults);
-    this.weather_timestamp = JdbcWritableBridge.readString(18, __dbResults);
-    this.temperature = JdbcWritableBridge.readDouble(19, __dbResults);
-    this.humidity = JdbcWritableBridge.readDouble(20, __dbResults);
-    this.pressure = JdbcWritableBridge.readDouble(21, __dbResults);
-    this.visibility = JdbcWritableBridge.readDouble(22, __dbResults);
-    this.wind_direction = JdbcWritableBridge.readString(23, __dbResults);
-    this.wind_speed = JdbcWritableBridge.readDouble(24, __dbResults);
-    this.weather_condition = JdbcWritableBridge.readString(25, __dbResults);
-    this.amenity = JdbcWritableBridge.readBoolean(26, __dbResults);
-    this.bump = JdbcWritableBridge.readBoolean(27, __dbResults);
-    this.crossing = JdbcWritableBridge.readBoolean(28, __dbResults);
-    this.give_way = JdbcWritableBridge.readBoolean(29, __dbResults);
-    this.junction = JdbcWritableBridge.readBoolean(30, __dbResults);
-    this.no_exit = JdbcWritableBridge.readBoolean(31, __dbResults);
-    this.railway = JdbcWritableBridge.readBoolean(32, __dbResults);
-    this.roundabout = JdbcWritableBridge.readBoolean(33, __dbResults);
-    this.station = JdbcWritableBridge.readBoolean(34, __dbResults);
-    this.stop = JdbcWritableBridge.readBoolean(35, __dbResults);
-    this.traffic_calming = JdbcWritableBridge.readBoolean(36, __dbResults);
-    this.traffic_signal = JdbcWritableBridge.readBoolean(37, __dbResults);
-    this.turning_loop = JdbcWritableBridge.readBoolean(38, __dbResults);
-    this.sunrise_sunset = JdbcWritableBridge.readString(39, __dbResults);
-    this.civil_twilight = JdbcWritableBridge.readString(40, __dbResults);
-    this.nautical_twilight = JdbcWritableBridge.readString(41, __dbResults);
-    this.astronomical_twilight = JdbcWritableBridge.readString(42, __dbResults);
+    this.start_lat = JdbcWritableBridge.readDouble(6, __dbResults);
+    this.start_lng = JdbcWritableBridge.readDouble(7, __dbResults);
+    this.end_lat = JdbcWritableBridge.readDouble(8, __dbResults);
+    this.end_lng = JdbcWritableBridge.readDouble(9, __dbResults);
+    this.distance = JdbcWritableBridge.readDouble(10, __dbResults);
+    this.description = JdbcWritableBridge.readString(11, __dbResults);
+    this.street = JdbcWritableBridge.readString(12, __dbResults);
+    this.city = JdbcWritableBridge.readString(13, __dbResults);
+    this.county = JdbcWritableBridge.readString(14, __dbResults);
+    this.state = JdbcWritableBridge.readString(15, __dbResults);
+    this.zipcode = JdbcWritableBridge.readString(16, __dbResults);
+    this.country = JdbcWritableBridge.readString(17, __dbResults);
+    this.timezone = JdbcWritableBridge.readString(18, __dbResults);
+    this.airport_code = JdbcWritableBridge.readString(19, __dbResults);
+    this.weather_timestamp = JdbcWritableBridge.readString(20, __dbResults);
+    this.temperature = JdbcWritableBridge.readDouble(21, __dbResults);
+    this.wind_chill = JdbcWritableBridge.readDouble(22, __dbResults);
+    this.humidity = JdbcWritableBridge.readDouble(23, __dbResults);
+    this.pressure = JdbcWritableBridge.readDouble(24, __dbResults);
+    this.visibility = JdbcWritableBridge.readDouble(25, __dbResults);
+    this.wind_direction = JdbcWritableBridge.readString(26, __dbResults);
+    this.wind_speed = JdbcWritableBridge.readDouble(27, __dbResults);
+    this.precipitation = JdbcWritableBridge.readDouble(28, __dbResults);
+    this.weather_condition = JdbcWritableBridge.readString(29, __dbResults);
+    this.amenity = JdbcWritableBridge.readBoolean(30, __dbResults);
+    this.bump = JdbcWritableBridge.readBoolean(31, __dbResults);
+    this.crossing = JdbcWritableBridge.readBoolean(32, __dbResults);
+    this.give_way = JdbcWritableBridge.readBoolean(33, __dbResults);
+    this.junction = JdbcWritableBridge.readBoolean(34, __dbResults);
+    this.no_exit = JdbcWritableBridge.readBoolean(35, __dbResults);
+    this.railway = JdbcWritableBridge.readBoolean(36, __dbResults);
+    this.roundabout = JdbcWritableBridge.readBoolean(37, __dbResults);
+    this.station = JdbcWritableBridge.readBoolean(38, __dbResults);
+    this.stop = JdbcWritableBridge.readBoolean(39, __dbResults);
+    this.traffic_calming = JdbcWritableBridge.readBoolean(40, __dbResults);
+    this.traffic_signal = JdbcWritableBridge.readBoolean(41, __dbResults);
+    this.turning_loop = JdbcWritableBridge.readBoolean(42, __dbResults);
+    this.sunrise_sunset = JdbcWritableBridge.readString(43, __dbResults);
+    this.civil_twilight = JdbcWritableBridge.readString(44, __dbResults);
+    this.nautical_twilight = JdbcWritableBridge.readString(45, __dbResults);
+    this.astronomical_twilight = JdbcWritableBridge.readString(46, __dbResults);
   }
   public void loadLargeObjects(LargeObjectLoader __loader)
       throws SQLException, IOException, InterruptedException {
@@ -969,44 +1053,48 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     JdbcWritableBridge.writeInteger(severity, 3 + __off, 5, __dbStmt);
     JdbcWritableBridge.writeString(start_time, 4 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(end_time, 5 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeDouble(lat, 6 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(lng, 7 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(distance, 8 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeString(description, 9 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(street, 10 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(city, 11 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(county, 12 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(state, 13 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(zipcode, 14 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(country, 15 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(timezone, 16 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(airport_code, 17 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(weather_timestamp, 18 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeDouble(temperature, 19 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(humidity, 20 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(pressure, 21 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(visibility, 22 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeString(wind_direction, 23 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeDouble(wind_speed, 24 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeString(weather_condition, 25 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeBoolean(amenity, 26 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(bump, 27 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(crossing, 28 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(give_way, 29 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(junction, 30 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(no_exit, 31 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(railway, 32 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(roundabout, 33 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(station, 34 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(stop, 35 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(traffic_calming, 36 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(traffic_signal, 37 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(turning_loop, 38 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeString(sunrise_sunset, 39 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(civil_twilight, 40 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(nautical_twilight, 41 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(astronomical_twilight, 42 + __off, 12, __dbStmt);
-    return 42;
+    JdbcWritableBridge.writeDouble(start_lat, 6 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(start_lng, 7 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(end_lat, 8 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(end_lng, 9 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(distance, 10 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeString(description, 11 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(street, 12 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(city, 13 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(county, 14 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(state, 15 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(zipcode, 16 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(country, 17 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(timezone, 18 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(airport_code, 19 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(weather_timestamp, 20 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeDouble(temperature, 21 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(wind_chill, 22 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(humidity, 23 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(pressure, 24 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(visibility, 25 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeString(wind_direction, 26 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeDouble(wind_speed, 27 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(precipitation, 28 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeString(weather_condition, 29 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeBoolean(amenity, 30 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(bump, 31 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(crossing, 32 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(give_way, 33 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(junction, 34 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(no_exit, 35 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(railway, 36 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(roundabout, 37 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(station, 38 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(stop, 39 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(traffic_calming, 40 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(traffic_signal, 41 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(turning_loop, 42 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeString(sunrise_sunset, 43 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(civil_twilight, 44 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(nautical_twilight, 45 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(astronomical_twilight, 46 + __off, 12, __dbStmt);
+    return 46;
   }
   public void write0(PreparedStatement __dbStmt, int __off) throws SQLException {
     JdbcWritableBridge.writeString(id, 1 + __off, 12, __dbStmt);
@@ -1014,43 +1102,47 @@ public class accidents extends SqoopRecord  implements DBWritable, Writable {
     JdbcWritableBridge.writeInteger(severity, 3 + __off, 5, __dbStmt);
     JdbcWritableBridge.writeString(start_time, 4 + __off, 12, __dbStmt);
     JdbcWritableBridge.writeString(end_time, 5 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeDouble(lat, 6 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(lng, 7 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(distance, 8 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeString(description, 9 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(street, 10 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(city, 11 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(county, 12 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(state, 13 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(zipcode, 14 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(country, 15 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(timezone, 16 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(airport_code, 17 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(weather_timestamp, 18 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeDouble(temperature, 19 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(humidity, 20 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(pressure, 21 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeDouble(visibility, 22 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeString(wind_direction, 23 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeDouble(wind_speed, 24 + __off, 8, __dbStmt);
-    JdbcWritableBridge.writeString(weather_condition, 25 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeBoolean(amenity, 26 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(bump, 27 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(crossing, 28 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(give_way, 29 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(junction, 30 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(no_exit, 31 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(railway, 32 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(roundabout, 33 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(station, 34 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(stop, 35 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(traffic_calming, 36 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(traffic_signal, 37 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeBoolean(turning_loop, 38 + __off, -7, __dbStmt);
-    JdbcWritableBridge.writeString(sunrise_sunset, 39 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(civil_twilight, 40 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(nautical_twilight, 41 + __off, 12, __dbStmt);
-    JdbcWritableBridge.writeString(astronomical_twilight, 42 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeDouble(start_lat, 6 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(start_lng, 7 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(end_lat, 8 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(end_lng, 9 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(distance, 10 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeString(description, 11 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(street, 12 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(city, 13 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(county, 14 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(state, 15 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(zipcode, 16 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(country, 17 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(timezone, 18 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(airport_code, 19 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(weather_timestamp, 20 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeDouble(temperature, 21 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(wind_chill, 22 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(humidity, 23 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(pressure, 24 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(visibility, 25 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeString(wind_direction, 26 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeDouble(wind_speed, 27 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeDouble(precipitation, 28 + __off, 8, __dbStmt);
+    JdbcWritableBridge.writeString(weather_condition, 29 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeBoolean(amenity, 30 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(bump, 31 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(crossing, 32 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(give_way, 33 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(junction, 34 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(no_exit, 35 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(railway, 36 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(roundabout, 37 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(station, 38 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(stop, 39 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(traffic_calming, 40 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(traffic_signal, 41 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeBoolean(turning_loop, 42 + __off, -7, __dbStmt);
+    JdbcWritableBridge.writeString(sunrise_sunset, 43 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(civil_twilight, 44 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(nautical_twilight, 45 + __off, 12, __dbStmt);
+    JdbcWritableBridge.writeString(astronomical_twilight, 46 + __off, 12, __dbStmt);
   }
   public void readFields(DataInput __dataIn) throws IOException {
 this.readFields0(__dataIn);  }
@@ -1081,14 +1173,24 @@ this.readFields0(__dataIn);  }
     this.end_time = Text.readString(__dataIn);
     }
     if (__dataIn.readBoolean()) { 
-        this.lat = null;
+        this.start_lat = null;
     } else {
-    this.lat = Double.valueOf(__dataIn.readDouble());
+    this.start_lat = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
-        this.lng = null;
+        this.start_lng = null;
     } else {
-    this.lng = Double.valueOf(__dataIn.readDouble());
+    this.start_lng = Double.valueOf(__dataIn.readDouble());
+    }
+    if (__dataIn.readBoolean()) { 
+        this.end_lat = null;
+    } else {
+    this.end_lat = Double.valueOf(__dataIn.readDouble());
+    }
+    if (__dataIn.readBoolean()) { 
+        this.end_lng = null;
+    } else {
+    this.end_lng = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
         this.distance = null;
@@ -1151,6 +1253,11 @@ this.readFields0(__dataIn);  }
     this.temperature = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
+        this.wind_chill = null;
+    } else {
+    this.wind_chill = Double.valueOf(__dataIn.readDouble());
+    }
+    if (__dataIn.readBoolean()) { 
         this.humidity = null;
     } else {
     this.humidity = Double.valueOf(__dataIn.readDouble());
@@ -1174,6 +1281,11 @@ this.readFields0(__dataIn);  }
         this.wind_speed = null;
     } else {
     this.wind_speed = Double.valueOf(__dataIn.readDouble());
+    }
+    if (__dataIn.readBoolean()) { 
+        this.precipitation = null;
+    } else {
+    this.precipitation = Double.valueOf(__dataIn.readDouble());
     }
     if (__dataIn.readBoolean()) { 
         this.weather_condition = null;
@@ -1297,17 +1409,29 @@ this.readFields0(__dataIn);  }
         __dataOut.writeBoolean(false);
     Text.writeString(__dataOut, end_time);
     }
-    if (null == this.lat) { 
+    if (null == this.start_lat) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.lat);
+    __dataOut.writeDouble(this.start_lat);
     }
-    if (null == this.lng) { 
+    if (null == this.start_lng) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.lng);
+    __dataOut.writeDouble(this.start_lng);
+    }
+    if (null == this.end_lat) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.end_lat);
+    }
+    if (null == this.end_lng) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.end_lng);
     }
     if (null == this.distance) { 
         __dataOut.writeBoolean(true);
@@ -1381,6 +1505,12 @@ this.readFields0(__dataIn);  }
         __dataOut.writeBoolean(false);
     __dataOut.writeDouble(this.temperature);
     }
+    if (null == this.wind_chill) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.wind_chill);
+    }
     if (null == this.humidity) { 
         __dataOut.writeBoolean(true);
     } else {
@@ -1410,6 +1540,12 @@ this.readFields0(__dataIn);  }
     } else {
         __dataOut.writeBoolean(false);
     __dataOut.writeDouble(this.wind_speed);
+    }
+    if (null == this.precipitation) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.precipitation);
     }
     if (null == this.weather_condition) { 
         __dataOut.writeBoolean(true);
@@ -1551,17 +1687,29 @@ this.readFields0(__dataIn);  }
         __dataOut.writeBoolean(false);
     Text.writeString(__dataOut, end_time);
     }
-    if (null == this.lat) { 
+    if (null == this.start_lat) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.lat);
+    __dataOut.writeDouble(this.start_lat);
     }
-    if (null == this.lng) { 
+    if (null == this.start_lng) { 
         __dataOut.writeBoolean(true);
     } else {
         __dataOut.writeBoolean(false);
-    __dataOut.writeDouble(this.lng);
+    __dataOut.writeDouble(this.start_lng);
+    }
+    if (null == this.end_lat) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.end_lat);
+    }
+    if (null == this.end_lng) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.end_lng);
     }
     if (null == this.distance) { 
         __dataOut.writeBoolean(true);
@@ -1635,6 +1783,12 @@ this.readFields0(__dataIn);  }
         __dataOut.writeBoolean(false);
     __dataOut.writeDouble(this.temperature);
     }
+    if (null == this.wind_chill) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.wind_chill);
+    }
     if (null == this.humidity) { 
         __dataOut.writeBoolean(true);
     } else {
@@ -1664,6 +1818,12 @@ this.readFields0(__dataIn);  }
     } else {
         __dataOut.writeBoolean(false);
     __dataOut.writeDouble(this.wind_speed);
+    }
+    if (null == this.precipitation) { 
+        __dataOut.writeBoolean(true);
+    } else {
+        __dataOut.writeBoolean(false);
+    __dataOut.writeDouble(this.precipitation);
     }
     if (null == this.weather_condition) { 
         __dataOut.writeBoolean(true);
@@ -1797,9 +1957,13 @@ this.readFields0(__dataIn);  }
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(end_time==null?"null":end_time, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(lat==null?"null":"" + lat, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(start_lat==null?"null":"" + start_lat, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(lng==null?"null":"" + lng, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(start_lng==null?"null":"" + start_lng, delimiters));
+    __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(end_lat==null?"null":"" + end_lat, delimiters));
+    __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(end_lng==null?"null":"" + end_lng, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(distance==null?"null":"" + distance, delimiters));
     __sb.append(fieldDelim);
@@ -1825,6 +1989,8 @@ this.readFields0(__dataIn);  }
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(temperature==null?"null":"" + temperature, delimiters));
     __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(wind_chill==null?"null":"" + wind_chill, delimiters));
+    __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(humidity==null?"null":"" + humidity, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(pressure==null?"null":"" + pressure, delimiters));
@@ -1834,6 +2000,8 @@ this.readFields0(__dataIn);  }
     __sb.append(FieldFormatter.escapeAndEnclose(wind_direction==null?"null":wind_direction, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(wind_speed==null?"null":"" + wind_speed, delimiters));
+    __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(precipitation==null?"null":"" + precipitation, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(weather_condition==null?"null":weather_condition, delimiters));
     __sb.append(fieldDelim);
@@ -1886,9 +2054,13 @@ this.readFields0(__dataIn);  }
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(end_time==null?"null":end_time, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(lat==null?"null":"" + lat, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(start_lat==null?"null":"" + start_lat, delimiters));
     __sb.append(fieldDelim);
-    __sb.append(FieldFormatter.escapeAndEnclose(lng==null?"null":"" + lng, delimiters));
+    __sb.append(FieldFormatter.escapeAndEnclose(start_lng==null?"null":"" + start_lng, delimiters));
+    __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(end_lat==null?"null":"" + end_lat, delimiters));
+    __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(end_lng==null?"null":"" + end_lng, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(distance==null?"null":"" + distance, delimiters));
     __sb.append(fieldDelim);
@@ -1914,6 +2086,8 @@ this.readFields0(__dataIn);  }
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(temperature==null?"null":"" + temperature, delimiters));
     __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(wind_chill==null?"null":"" + wind_chill, delimiters));
+    __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(humidity==null?"null":"" + humidity, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(pressure==null?"null":"" + pressure, delimiters));
@@ -1923,6 +2097,8 @@ this.readFields0(__dataIn);  }
     __sb.append(FieldFormatter.escapeAndEnclose(wind_direction==null?"null":wind_direction, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(wind_speed==null?"null":"" + wind_speed, delimiters));
+    __sb.append(fieldDelim);
+    __sb.append(FieldFormatter.escapeAndEnclose(precipitation==null?"null":"" + precipitation, delimiters));
     __sb.append(fieldDelim);
     __sb.append(FieldFormatter.escapeAndEnclose(weather_condition==null?"null":weather_condition, delimiters));
     __sb.append(fieldDelim);
@@ -2064,8 +2240,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.lat = null; } else {
-      this.lat = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.start_lat = null; } else {
+      this.start_lat = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -2073,8 +2249,26 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.lng = null; } else {
-      this.lng = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.start_lng = null; } else {
+      this.start_lng = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.end_lat = null; } else {
+      this.end_lat = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.end_lng = null; } else {
+      this.end_lng = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -2190,6 +2384,15 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.wind_chill = null; } else {
+      this.wind_chill = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
     if (__cur_str.equals("null") || __cur_str.length() == 0) { this.humidity = null; } else {
       this.humidity = Double.valueOf(__cur_str);
     }
@@ -2228,6 +2431,15 @@ this.readFields0(__dataIn);  }
     }
     if (__cur_str.equals("null") || __cur_str.length() == 0) { this.wind_speed = null; } else {
       this.wind_speed = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.precipitation = null; } else {
+      this.precipitation = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -2447,8 +2659,8 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.lat = null; } else {
-      this.lat = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.start_lat = null; } else {
+      this.start_lat = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -2456,8 +2668,26 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
-    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.lng = null; } else {
-      this.lng = Double.valueOf(__cur_str);
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.start_lng = null; } else {
+      this.start_lng = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.end_lat = null; } else {
+      this.end_lat = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.end_lng = null; } else {
+      this.end_lng = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -2573,6 +2803,15 @@ this.readFields0(__dataIn);  }
     } else {
         __cur_str = "null";
     }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.wind_chill = null; } else {
+      this.wind_chill = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
     if (__cur_str.equals("null") || __cur_str.length() == 0) { this.humidity = null; } else {
       this.humidity = Double.valueOf(__cur_str);
     }
@@ -2611,6 +2850,15 @@ this.readFields0(__dataIn);  }
     }
     if (__cur_str.equals("null") || __cur_str.length() == 0) { this.wind_speed = null; } else {
       this.wind_speed = Double.valueOf(__cur_str);
+    }
+
+    if (__it.hasNext()) {
+        __cur_str = __it.next();
+    } else {
+        __cur_str = "null";
+    }
+    if (__cur_str.equals("null") || __cur_str.length() == 0) { this.precipitation = null; } else {
+      this.precipitation = Double.valueOf(__cur_str);
     }
 
     if (__it.hasNext()) {
@@ -2792,8 +3040,10 @@ this.readFields0(__dataIn);  }
     __sqoop$field_map.put("severity", this.severity);
     __sqoop$field_map.put("start_time", this.start_time);
     __sqoop$field_map.put("end_time", this.end_time);
-    __sqoop$field_map.put("lat", this.lat);
-    __sqoop$field_map.put("lng", this.lng);
+    __sqoop$field_map.put("start_lat", this.start_lat);
+    __sqoop$field_map.put("start_lng", this.start_lng);
+    __sqoop$field_map.put("end_lat", this.end_lat);
+    __sqoop$field_map.put("end_lng", this.end_lng);
     __sqoop$field_map.put("distance", this.distance);
     __sqoop$field_map.put("description", this.description);
     __sqoop$field_map.put("street", this.street);
@@ -2806,11 +3056,13 @@ this.readFields0(__dataIn);  }
     __sqoop$field_map.put("airport_code", this.airport_code);
     __sqoop$field_map.put("weather_timestamp", this.weather_timestamp);
     __sqoop$field_map.put("temperature", this.temperature);
+    __sqoop$field_map.put("wind_chill", this.wind_chill);
     __sqoop$field_map.put("humidity", this.humidity);
     __sqoop$field_map.put("pressure", this.pressure);
     __sqoop$field_map.put("visibility", this.visibility);
     __sqoop$field_map.put("wind_direction", this.wind_direction);
     __sqoop$field_map.put("wind_speed", this.wind_speed);
+    __sqoop$field_map.put("precipitation", this.precipitation);
     __sqoop$field_map.put("weather_condition", this.weather_condition);
     __sqoop$field_map.put("amenity", this.amenity);
     __sqoop$field_map.put("bump", this.bump);
@@ -2838,8 +3090,10 @@ this.readFields0(__dataIn);  }
     __sqoop$field_map.put("severity", this.severity);
     __sqoop$field_map.put("start_time", this.start_time);
     __sqoop$field_map.put("end_time", this.end_time);
-    __sqoop$field_map.put("lat", this.lat);
-    __sqoop$field_map.put("lng", this.lng);
+    __sqoop$field_map.put("start_lat", this.start_lat);
+    __sqoop$field_map.put("start_lng", this.start_lng);
+    __sqoop$field_map.put("end_lat", this.end_lat);
+    __sqoop$field_map.put("end_lng", this.end_lng);
     __sqoop$field_map.put("distance", this.distance);
     __sqoop$field_map.put("description", this.description);
     __sqoop$field_map.put("street", this.street);
@@ -2852,11 +3106,13 @@ this.readFields0(__dataIn);  }
     __sqoop$field_map.put("airport_code", this.airport_code);
     __sqoop$field_map.put("weather_timestamp", this.weather_timestamp);
     __sqoop$field_map.put("temperature", this.temperature);
+    __sqoop$field_map.put("wind_chill", this.wind_chill);
     __sqoop$field_map.put("humidity", this.humidity);
     __sqoop$field_map.put("pressure", this.pressure);
     __sqoop$field_map.put("visibility", this.visibility);
     __sqoop$field_map.put("wind_direction", this.wind_direction);
     __sqoop$field_map.put("wind_speed", this.wind_speed);
+    __sqoop$field_map.put("precipitation", this.precipitation);
     __sqoop$field_map.put("weather_condition", this.weather_condition);
     __sqoop$field_map.put("amenity", this.amenity);
     __sqoop$field_map.put("bump", this.bump);

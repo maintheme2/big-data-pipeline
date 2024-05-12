@@ -15,10 +15,9 @@ printf "Finished\n"
 
 password=$(head -n 1 secrets/.psql.pass)
 
-hdfs dfs -mkdir -p /user/team26/project/warehouse
-hdfs dfs -rm -f -R -skipTrash /user/team26/project/warehouse/*
+hdfs dfs -rm -R -skipTrash project/warehouse/*
 
-sqoop import-all-tables --connect jdbc:postgresql://hadoop-04.uni.innopolis.ru/team26_projectdb --username team26 --password $password --compression-codec=snappy --compress --as-avrodatafile --warehouse-dir=/user/team26/project/warehouse --m 1
+sqoop import-all-tables --connect jdbc:postgresql://hadoop-04.uni.innopolis.ru/team26_projectdb --username team26 --password $password --compression-codec=snappy --compress --as-avrodatafile --warehouse-dir=project/warehouse --m 1
 
-mv *.java output/
-mv *.avsc output/
+mv accidents.java output/
+mv accidents.avsc output/
